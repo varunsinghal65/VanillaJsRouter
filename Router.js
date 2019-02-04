@@ -68,14 +68,13 @@ router.flushRoutes = function() {
 /**
  * Note : This has to be placed after router.route is defined
  * 
- * This IIFE wires the the {router.route} method to HashChange event
+ * This wires the the {router.route} method to HashChange event
  * Whenever # changes in URL, this event is fired, which in turn 
- * fires the route method to compute route and tranfer control
+ * fires the route method to compute route and transfer control
  * accordingly
  */
-(function(){
-    window.addEventListener("hashchange", router.route.bind(router), false);
-})();
+window.addEventListener("hashchange", router.route.bind(router), false);
+
 
 /**
  * TESTING the router
